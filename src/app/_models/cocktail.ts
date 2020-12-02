@@ -3,4 +3,5 @@ export interface Cocktail {
     title: string;
     description: string;
     type: string;
+    imageUrl: string;
 }
