@@ -1,0 +1,8 @@
+{
+    "cocktails": [
+        { "id": 1, "title": "Val 1", "description": "Desc 1", "type": "Non-alchool"},
+        { "id": 2, "title": "Val 2", "description": "Desc 2", "type": "Non-alchool"},
+        { "id": 3, "title": "Val 3", "description": "Desc 3", "type": "Non-alchool"},
+        { "id": 4, "title": "Val 4", "description": "Desc 4", "type": "alchool"}
+    ]
+}
