@@ -29,4 +29,8 @@ export class CocktailListComponent implements OnInit {
     });
   }
 
+  onSearchChange(event) {
+    console.log(event);
+  }
+
 }
