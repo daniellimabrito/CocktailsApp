@@ -1,8 +1,37 @@
 
-<div class="container mt-4">
+<div *ngIf="!loading" class="container mt-4">
   <div class="row">
-    <div *ngFor="let item of cocktails" class="col-md-4">
+    <div *ngFor="let item of cocktails; let i = index;" class="col-md-4">
       <app-cocktail-card [cocktail] = "item" ></app-cocktail-card>
     </div>
+  <h3 *ngIf="noResults" >No results found</h3>
   </div>
 </div>
+
+<div class="container mt-5" *ngIf="loading">
+    
+    <div class="spinner-grow spinner-grow-sm text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-success" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-warning" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-info" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-light" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-dark" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+ </div>

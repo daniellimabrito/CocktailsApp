@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cocktail } from 'src/app/_models/cocktail';
 import { CocktailService } from 'src/app/_services/cocktail.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cocktail-detail',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CocktailDetailComponent implements OnInit {
 cocktail: Cocktail;
-  constructor(private cocktailService: CocktailService, private route: ActivatedRoute) { }
+  constructor(private cocktailService: CocktailService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
  /*
@@ -28,5 +29,8 @@ cocktail: Cocktail;
       console.log(error);
     });
   }
+  back(): void {
+    this.location.back();
+}
 
 }
