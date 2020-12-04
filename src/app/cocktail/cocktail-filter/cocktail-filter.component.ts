@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CocktailService } from 'src/app/_services/cocktail.service';
 
 @Component({
   selector: 'app-cocktail-filter',
@@ -7,17 +8,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CocktailFilterComponent implements OnInit {
 
-  @Output() searchCocktail = new EventEmitter<string>();
+  // @Output() searchCocktail = new EventEmitter<string>();
 
 
-  constructor() { }
+  constructor( private cocktailService: CocktailService ) { }
 
   ngOnInit() {
   }
 
   onSearchChange(val: string) {
    // console.log(val);
-    this.searchCocktail.emit(val);
+    this.cocktailService.searchCocktail.emit(val);
 
   }
 
