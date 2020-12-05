@@ -12,6 +12,7 @@ import { CocktailListComponent } from './cocktail/cocktail-list/cocktail-list.co
 import { CocktailDetailComponent } from './cocktail/cocktail-detail/cocktail-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CocktailFilterComponent } from './cocktail/cocktail-filter/cocktail-filter.component';
+import { NavbarComponent } from './navigation/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CocktailFilterComponent } from './cocktail/cocktail-filter/cocktail-fil
       CocktailCardComponent,
       CocktailListComponent,
       CocktailDetailComponent,
-      CocktailFilterComponent
+      CocktailFilterComponent,
+      NavbarComponent
    ],
   imports: [
     BrowserModule,
