@@ -1,7 +1,7 @@
 
-<div *ngIf="!loading" class="container mt-4">
-  <div class="row">
-    <div *ngFor="let item of cocktails; let i = index;" class="col-md-4">
+<div *ngIf="!loading" class="container1 mt-4">
+  <div class="container1 row">
+    <div *ngFor="let item of cocktails; let i = index;" class="col-md1-4 p-3">
       <app-cocktail-card [cocktail] = "item" ></app-cocktail-card>
     </div>
   <h3 *ngIf="noResults" >No results found</h3>
