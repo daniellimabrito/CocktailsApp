@@ -4,7 +4,8 @@
         { "id": 2, "title": "Alabama Slammer", "description": "Pour all ingredients (except for lemon juice) over ice in a highball glass.", "type": "Non-alchool", "imageUrl" : "https://www.thecocktaildb.com/images/media/drink/jntghf1606771886.jpg" },
         { "id": 3, "title": "After Dinner Cocktail", "description": "Shake all ingredients (except lime wedge) with ice and strain into a cocktail glass.", "type": "Non-alchool", "imageUrl" : "https://www.thecocktaildb.com/images/media/drink/vtytxq1483387578.jpg" },
         { "id": 4, "title": "Moscow Mule", "description": "Combine vodka and ginger beer in a highball glass filled with ice.", "type": "alchool", "imageUrl" : "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg" },
-        { "id": 5, "title": "Bourbon Sling", "description": "In a shaker half-filled with ice cubes, combine the sugar, water, lemon juice, and bourbon.", "type": "non-alchool", "imageUrl" : "https://www.thecocktaildb.com/images/media/drink/3s36ql1504366260.jpg" }
+        { "id": 5, "title": "Bourbon Sling", "description": "In a shaker half-filled with ice cubes, combine the sugar, water, lemon juice, and bourbon.", "type": "non-alchool", "imageUrl" : "https://www.thecocktaildb.com/images/media/drink/3s36ql1504366260.jpg" },
+        { "id": 6, "title": "Negroni", "description": "Stir into glass over ice, garnish and serve.", "type": "alchool", "imageUrl" : "https://www.thecocktaildb.com/images/media/drink/qgdu971561574065.jpg" }
 
     ]
 }
