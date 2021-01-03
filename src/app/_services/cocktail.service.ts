@@ -22,4 +22,12 @@ constructor(private http: HttpClient) { }
   getById(id: number) {
     return this.http.get<Cocktail>(this.baseUrl + 'cocktails/' + id);
   }
+
+  addItem(cocktail: Cocktail) {
+    return this.http.post<Cocktail>(this.baseUrl + 'cocktails', cocktail);
+  }
+
+  editItem(cocktail: Cocktail) {
+    return this.http.put<Cocktail>(this.baseUrl + 'cocktails', cocktail);
+  }
 }
