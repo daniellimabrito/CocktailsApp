@@ -13,6 +13,8 @@ import { CocktailDetailComponent } from './cocktail/cocktail-detail/cocktail-det
 import { HttpClientModule } from '@angular/common/http';
 import { CocktailFilterComponent } from './cocktail/cocktail-filter/cocktail-filter.component';
 import { NavbarComponent } from './navigation/navbar/navbar.component';
+import { CocktailEditComponent } from './cocktail/cocktail-edit/cocktail-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { NavbarComponent } from './navigation/navbar/navbar.component';
       CocktailListComponent,
       CocktailDetailComponent,
       CocktailFilterComponent,
+      CocktailEditComponent,
       NavbarComponent
    ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule
     // AppRoutingModule
   ],
   providers: [],

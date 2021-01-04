@@ -3,6 +3,17 @@
   <div class="card-body">
     <h5 class="card-title">{{cocktail.title}} </h5>
     <p class="card-text">{{cocktail.description}} </p>
-    <button [routerLink]="['/cocktails/', cocktail.id]" class="btn btn-primary">Details</button>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12 text-center">
+            <button [routerLink]="['/cocktails/', cocktail.id, 'edit']" class="btn btn-primary btn-md"><i class="far fa-edit"></i>Edit</button>
+          
+         </div>
+         <div class="col-md-6 col-sm-12 text-center">
+          
+            <button [routerLink]="['/cocktails/', cocktail.id]" class="btn btn-primary btn-md">Details</button>
+         </div>         
+    </div>
+
   </div>
 </div>
