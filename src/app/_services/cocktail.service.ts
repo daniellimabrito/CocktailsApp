@@ -28,6 +28,7 @@ constructor(private http: HttpClient) { }
   }
 
   editItem(cocktail: Cocktail) {
-    return this.http.put<Cocktail>(this.baseUrl + 'cocktails', cocktail);
+    console.log(cocktail);
+    return this.http.put<Cocktail>(this.baseUrl + 'cocktails/' + cocktail.id, cocktail);
   }
 }
