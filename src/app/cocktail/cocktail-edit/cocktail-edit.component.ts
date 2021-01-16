@@ -40,7 +40,21 @@ export class CocktailEditComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(form.value);
+    
+
+    let cocktail: Cocktail;
+
+    this.cocktail.id = this.route.snapshot.params.id;
+    this.cocktail.description = form.value.title;
+    this.cocktail.type = form.value.type;
+    this.cocktail.imageUrl = form.value.imageUrl;
+
+    this.cocktailService.editItem(this.cocktail).subscribe( next => {
+      alert("Cocktail updated successfully!");
+      window.location.href = '/home';
+    }, error => {
+      console.log(error);
+    }); 
   }
 
   back(): void {
