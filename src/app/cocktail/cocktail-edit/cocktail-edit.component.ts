@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { CocktailService } from 'src/app/_services/cocktail.service';
 import { ActivatedRoute } from '@angular/router';
 import { Cocktail } from 'src/app/_models/cocktail';
+import { AlertifyService } from 'src/app/_services/alertify.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class CocktailEditComponent implements OnInit {
 
 ];
 
-  constructor(private cocktailService: CocktailService, private route: ActivatedRoute, private location: Location) { }
+  constructor(private cocktailService: CocktailService, private route: ActivatedRoute, private location: Location, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.loadCocktail();
@@ -31,7 +32,7 @@ export class CocktailEditComponent implements OnInit {
       this.cocktail = data;
       this.selectedDrink = data.type;
       console.log(this.selectedDrink);
-    }, error => { console.log(error) });
+    }, error => { this.alertify.error(error) });
 
   }
 
@@ -50,11 +51,22 @@ export class CocktailEditComponent implements OnInit {
     this.cocktail.imageUrl = form.value.imageUrl;
 
     this.cocktailService.editItem(this.cocktail).subscribe( next => {
-      alert("Cocktail updated successfully!");
-      window.location.href = '/home';
+      
+        this.alertify.success('Cocktail updated successfully!');
+     
     }, error => {
-      console.log(error);
-    }); 
+      this.alertify.error(error);
+    }, () => {
+     
+      setTimeout(() => {
+        //this.alertify.success('Cocktail updated successfully!');
+        window.location.href = '/home';
+      }, 3000);      
+     
+      //
+
+    }
+    ); 
   }
 
   back(): void {
