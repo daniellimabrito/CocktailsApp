@@ -31,4 +31,8 @@ constructor(private http: HttpClient) { }
     console.log(cocktail);
     return this.http.put<Cocktail>(this.baseUrl + 'cocktails/' + cocktail.id, cocktail);
   }
+
+  deleteItem(cocktail: Cocktail) {
+    return this.http.delete<Cocktail>(this.baseUrl + 'cocktails/' + cocktail.id);
+  }
 }
