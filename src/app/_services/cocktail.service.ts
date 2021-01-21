@@ -32,7 +32,7 @@ constructor(private http: HttpClient) { }
     return this.http.put<Cocktail>(this.baseUrl + 'cocktails/' + cocktail.id, cocktail);
   }
 
-  deleteItem(cocktail: Cocktail) {
-    return this.http.delete<Cocktail>(this.baseUrl + 'cocktails/' + cocktail.id);
+  deleteItem(id: number) {
+    return this.http.delete<Cocktail>(this.baseUrl + 'cocktails/' + id);
   }
 }
