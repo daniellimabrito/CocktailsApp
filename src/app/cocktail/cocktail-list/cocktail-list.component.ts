@@ -4,6 +4,7 @@ import { filter, map, delay } from 'rxjs/operators';
 import { Cocktail } from 'src/app/_models/cocktail';
 import { CocktailService } from 'src/app/_services/cocktail.service';
 import { empty, of, Observable } from 'rxjs';
+import { FirebaseService } from 'src/app/_services/firebase.service';
 
 @Component({
   selector: 'app-cocktail-list',
@@ -20,12 +21,12 @@ export class CocktailListComponent implements OnInit {
   noResults;
 
   fakeObservable = new Observable<string>();
-  constructor(private cocktailService: CocktailService) {
+  constructor(private cocktailService: CocktailService, private firebaseService: FirebaseService) {
 
   }
 
   ngOnInit() {
-    this.loadCocktails();
+    this.fbLoadCocktails();
 
 
     this.cocktailService.searchCocktail.subscribe(
@@ -39,6 +40,24 @@ export class CocktailListComponent implements OnInit {
       }
     );
   }
+
+  fbLoadCocktails() {
+
+    this.firebaseService.getCocktails().then( (data) => {
+      console.log(data.payload);
+      this.cocktails = data.map((item) => {
+        console.log(item.payload.doc);
+        return {
+          ...item.payload.doc.data(),
+          id: item.payload.doc.id
+        }
+      });
+
+    }, error => {
+      console.log(error);
+    });
+
+  } 
 
   loadCocktails() {
 
