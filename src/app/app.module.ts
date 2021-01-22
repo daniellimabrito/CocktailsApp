@@ -15,6 +15,7 @@ import { CocktailFilterComponent } from './cocktail/cocktail-filter/cocktail-fil
 import { NavbarComponent } from './navigation/navbar/navbar.component';
 import { CocktailEditComponent } from './cocktail/cocktail-edit/cocktail-edit.component';
 import { FormsModule } from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot(appRoutes),
     FormsModule
     // AppRoutingModule

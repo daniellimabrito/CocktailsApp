@@ -5,14 +5,17 @@
     <p class="card-text">{{cocktail.description}} </p>
 
     <div class="row">
-        <div class="col-md-6 col-sm-12 text-center">
-            <button [routerLink]="['/cocktails/', cocktail.id, 'edit']" class="btn btn-primary btn-md"><i class="far fa-edit"></i>Edit</button>
-          
-         </div>
-         <div class="col-md-6 col-sm-12 text-center">
-          
-            <button [routerLink]="['/cocktails/', cocktail.id]" class="btn btn-primary btn-md">Details</button>
-         </div>         
+      <div class="col-md-4 col-sm-12 text-center">
+          <button [routerLink]="['/cocktails/', cocktail.id, 'edit']" class="btn btn-primary btn-md"><fa name="edit" animation=""></fa></button>      
+        </div>
+
+        <div class="col-md-4 col-sm-12 text-center">       
+          <button [routerLink]="['/cocktails/', cocktail.id]" class="btn btn-primary btn-md"><fa name="list" animation=""></fa></button>
+        </div>
+        <div class="col-md-4 col-sm-12 text-center">
+        <button (click)="deleteCocktail(cocktail.id)" class="btn btn-primary btn-md"><fa name="trash" animation=""></fa></button>      
+       </div>        
+         
     </div>
 
   </div>
