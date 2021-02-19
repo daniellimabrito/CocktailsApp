@@ -1,11 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Cocktail } from '../_models/cocktail';
+import { Observable } from 'rxjs';
+import { resolve } from 'url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
+
+  searchCocktail = new EventEmitter<string>();
+
 
 constructor(private db: AngularFirestore) { }
 
@@ -27,6 +32,10 @@ getCocktails(){
   })
 }
 
+fbGetCocktails() {
+  return this.db.collection('cocktails').snapshotChanges();
+}
+
 updateCocktail1(cocktailKey, value){
   value.title = value.title;
   return this.db.collection('cocktails').doc(cocktailKey).set(value);
@@ -42,6 +51,16 @@ deleteCocktail1(cocktailKey){
 
 deleteCocktail(cocktailId: string) {
   return  this.db.doc('cocktails/' + cocktailId).delete();
+}
+
+searchCocktails(searchValue: string) {
+  let val = this.db.collection('cocktails', ref => ref.where('title', '>=', searchValue)
+    .where('title', '<=', searchValue  + '\uf8ff'))
+    .snapshotChanges();
+
+    let val1 = this.db.firestore.collection('cocktails').where('title', '>=', searchValue).where('title', '<=', searchValue  + '\uf8ff');
+
+    return (val1);
 }
 
 
