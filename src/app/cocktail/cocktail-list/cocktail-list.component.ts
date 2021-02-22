@@ -29,24 +29,25 @@ export class CocktailListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getData();
-
+   // this.getData();
+/*
     this.fbLoadCocktails();
 
     this.firebaseService.searchCocktail.subscribe((data: string) => {
       this.fbGetCocktailsByTitle(data);
     }, error => console.log(error));
+*/
 
-/*
     this.cocktailService.searchCocktail.subscribe(
       (data: string) => {
         this.getCocktailsByTitle(data);
+        console.log(data);
       }, error => {
         console.log(error);
       }
     );
 
-    */
+    
   }
 
   fbLoadCocktails() {
